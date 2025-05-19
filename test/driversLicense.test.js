@@ -124,13 +124,13 @@ describe('Driver\'s license tests', () => {
             'repeat_practical_exam': true,
             'additional_lessons': false
         }},
-        {'theory_exam_points': 90, 'practical_exam_errors': Number.MAX_SAFE_INTEGER, 'output': {                     // Edge case: maximum integer in Python                  
+        {'theory_exam_points': 90, 'practical_exam_errors': Number.MAX_SAFE_INTEGER, 'output': {        // Edge case: maximum integer in JavaScript
             'license_granted': false,
             'repeat_theory_exam': false,
             'repeat_practical_exam': true,
             'additional_lessons': false
         }},
-        {'theory_exam_points': 90, 'practical_exam_errors': Number.MAX_SAFE_INTEGER + 1, 'output': {                 // Edge case: maximum integer in Python (it is converted to long)
+        {'theory_exam_points': 90, 'practical_exam_errors': Number.MAX_SAFE_INTEGER + 1, 'output': {    // Edge case: maximum integer in JavaScript 
             'license_granted': false,
             'repeat_theory_exam': false,
             'repeat_practical_exam': true,
@@ -159,8 +159,8 @@ describe('Driver\'s license tests', () => {
 
         // Edge cases 
 
-        {'theory_exam_points': Number.MAX_SAFE_INTEGER, 'practical_exam_errors': 1},        // Maximum integer in Python
-        {'theory_exam_points': Number.MAX_SAFE_INTEGER + 1, 'practical_exam_errors': 1},    // Maximum integer in Python + 1 (it is converted to long)
+        {'theory_exam_points': Number.MAX_SAFE_INTEGER, 'practical_exam_errors': 1},        // Maximum integer in JavaScript
+        {'theory_exam_points': Number.MAX_SAFE_INTEGER + 1, 'practical_exam_errors': 1},    // Maximum integer in JavaScript + 1 
     ];
     describe.each(driversLicenseFailsProvider)('Driver\'s license fails', (params) => {
         it(`${params.theory_exam_points} theory exam points, ${params.practical_exam_errors} practical exam errors fails`, () => {
